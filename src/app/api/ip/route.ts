@@ -7,5 +7,8 @@ export async function GET(req: NextRequest) {
   const reqIp = req.ip ?? null;
   const headerIp = getIp();
 
-  return Response.json({ ip_from_NextRequest: reqIp, ip_from_getIp: headerIp });
+  return Response.json({
+    ip_from_NextRequest: reqIp,
+    ip_from_headers: headerIp,
+  });
 }
